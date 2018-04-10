@@ -1,0 +1,126 @@
+﻿@model System.Collections.Generic.List<CCMassEmailNETStandard.Models.ContactModel>
+@{
+    ViewBag.Title = "Get";
+}
+<h2>Get</h2>
+
+<div>
+    <h4>ContactModel</h4>
+    <hr />
+    @foreach (var item in Model)
+    {
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.LabelFor(m => item.DateModified)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.DateModified)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(m => item.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(m => item.Fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.Fax)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.CellPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.CellPhone)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.WorkPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.WorkPhone)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.HomePhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.HomePhone)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.CompanyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.CompanyName)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.PrefixName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.PrefixName)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.Source)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.Source)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.Confirmed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.Confirmed)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.LastName)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.MiddleName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.MiddleName)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.FirstName)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.Status)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.JobTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.JobTitle)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.SourceDetails)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.SourceDetails)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => item.EmailAddresses)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.EmailAddresses)
+        </dd>
+
+    </dl>
+    }
+</div>

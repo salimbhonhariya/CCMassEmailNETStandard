@@ -1,0 +1,268 @@
+﻿@model System.Collections.Generic.IList<CCMassEmailNETStandard.Models.ContactViewModel>
+
+@{
+    ViewBag.Title = "ListAll";
+}
+
+<h3>@ViewBag.Message</h3>
+
+<h2>ListAll</h2>
+
+<div>
+    <h4>ContactViewModel</h4>
+    <hr />
+
+    @foreach (var item in Model)
+    {
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.LabelFor(m => item.Id)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Id)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.DateModified)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.DateModified)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.DateCreated)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.DateCreated)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.Fax)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Fax)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.CellPhone)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.CellPhone)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.WorkPhone)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.WorkPhone)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.HomePhone)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.HomePhone)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.CompanyName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.CompanyName)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.PrefixName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.PrefixName)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.JobTitle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.JobTitle)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.SourceDetails)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.SourceDetails)
+            </dd>
+
+
+            <dt>
+                @Html.LabelFor(m => item.EmailAddresses)
+            </dt>
+            <dd>
+                @foreach (var item1 in item.EmailAddresses)
+                {
+                    <table>
+                        <tr>
+                            <td class="id" style="display: none;">
+                                @Html.DisplayFor(modelItem => item1.EmailAddr)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.EmailAddr)
+                            </td>
+
+                        </tr>
+                    </table>
+                }
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.Addresses)
+            </dt>
+            <dd>
+                @foreach (var item1 in item.Addresses)
+                {
+                    <table>
+                        <tr>
+                            <td class="id" style="display: none;">
+                                @Html.DisplayFor(modelItem => item1.AddressType)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.AddressType)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.Line1)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.Line2)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.Line3)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.City)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.StateName)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.PostalCode)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.SubPostalCode)
+                            </td>
+
+                        </tr>
+                    </table>
+                }
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.Lists)
+            </dt>
+            <dd>
+                @foreach (var item1 in item.Lists)
+                {
+                    <table>
+                        <tr>
+                            <td class="id" style="display: none;">
+                                @Html.DisplayFor(modelItem => item1.ContactCount)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.DateCreated)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.DateModified)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.Name)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.Status)
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </dd>
+
+            <dt>
+                @Html.LabelFor(m => item.Notes)
+            </dt>
+            <dd>
+                @foreach (var item1 in item.Notes)
+                {
+                    <table>
+                        <tr>
+                            <td class="id" style="display: none;">
+                                @Html.DisplayFor(modelItem => item1.Content)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.CreatedDate)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.ModifiedDate)
+                            </td>
+                        </tr>
+                    </table>
+                }
+
+            </dd>
+            <dd>
+                <table>
+                    <tr>
+                        <td class="id" style="display:inline;">
+                            @using (Html.BeginForm("Delete", "CC", FormMethod.Get, new { Id = item.Id }))
+                            {
+                                @*@Html.HiddenFor(model => item.Id)*@
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        @*<input type="submit" value="Delete" class="btn btn-default">*@
+                                        @Html.ActionLink("Delete", "Delete", "CC", new { Id = item.Id }, null)
+                                    </div>
+                                </div>
+                            }
+
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("Create", "CC", FormMethod.Get))
+                            {
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        @Html.ActionLink("Create", "CreateShow", "CC", null, null)
+                                    </div>
+                                </div>
+                            }
+
+                        </td>
+
+                        <td>
+                            @using (Html.BeginForm("Put", "CC", FormMethod.Get, new { Id = item.Id }))
+                            {
+                                @*@Html.HiddenFor(model => item.Id)*@
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        @Html.ActionLink("Update", "Put", "CC", new { Id = item.Id }, null)
+                                    </div>
+                                </div>
+                            }
+
+                        </td>
+
+                        <td>
+                            @using (Html.BeginForm("Put", "CC", FormMethod.Get, new { Id = item.Id }))
+                            {
+                                @*@Html.HiddenFor(model => item.Id)*@
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        @Html.ActionLink("Send Campaign Email Now", "SendEmailNow", "CC", new { Id = item.Id }, null)
+                                    </div>
+                                </div>
+                            }
+
+                        </td>
+                    </tr>
+                </table>
+            </dd>
+
+        </dl>
+    }
+
+</div>
